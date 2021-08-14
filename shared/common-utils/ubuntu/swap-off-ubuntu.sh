@@ -1,5 +1,5 @@
 #!/bin/bash
-# Disable SWAP for all Kubernetes nodes in the cluster.
+# Disable SWAP for all nodes in the cluster.
 
 # -----------------
 

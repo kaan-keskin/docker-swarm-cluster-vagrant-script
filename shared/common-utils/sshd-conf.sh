@@ -1,5 +1,5 @@
 #!/bin/bash
-# SSHD service configuration for all Kubernetes nodes in the cluster.
+# SSHD service configuration for all nodes in the cluster.
 
 # -----------------
 

@@ -1,5 +1,5 @@
 #!/bin/bash
-# Time Zone Settings for all Kubernetes nodes in the cluster.
+# Time Zone Settings for all nodes in the cluster.
 
 # -----------------
 

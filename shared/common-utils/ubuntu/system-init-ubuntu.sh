@@ -1,5 +1,5 @@
 #!/bin/bash
-# Common utils for all Kubernetes nodes in the cluster.
+# Common utils for all nodes in the cluster.
 
 # -----------------
 

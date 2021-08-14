@@ -1,5 +1,5 @@
 #!/bin/bash
-# Common utils for all Kubernetes node in the cluster.
+# Docker Installation
 
 # -----------------
 #

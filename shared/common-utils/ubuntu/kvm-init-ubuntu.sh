@@ -1,5 +1,5 @@
 #!/bin/bash
-# KVM virtualization initializaiton for all Kubernetes nodes in the cluster.
+# KVM virtualization initializaiton for all nodes in the cluster.
 
 # -----------------
 
