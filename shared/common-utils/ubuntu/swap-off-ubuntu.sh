@@ -4,9 +4,9 @@
 # -----------------
 
 # Disable Swap Area
-sudo swapoff -a
+swapoff -a
 
 # This step keeps the swap area off during reboot with modifying fstab file.
-sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
+sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
 
 # -----------------

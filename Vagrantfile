@@ -2,8 +2,7 @@
 # vi: set ft=ruby :
 
 # All Vagrant configuration is done below. 
-# The "2" in Vagrant.configure configures the configuration version 
-# (we support older styles for backwards compatibility). 
+# The "2" in Vagrant.configure configures the configuration version. 
 # Please don't change it unless you know what you're doing.
 
 # Vagrant version requirement
@@ -100,6 +99,7 @@ Vagrant.configure("2") do |config|
     config.vm.define instance[:name] do |i|
       # VM Instance Specific Configuration
       i.vm.box = "ubuntu/focal64"
+      i.vm.box_check_update = true
       i.vm.hostname = instance[:name]
       i.vm.network "private_network", ip: "#{instance[:ip]}"
       i.disksize.size = vm_disksize
@@ -112,9 +112,8 @@ Vagrant.configure("2") do |config|
       # Shared folder between all instances:
       i.vm.synced_folder "./shared", "/vagrant"
       # Write hostnames and IP addresses of all nodes to the hosts file:
-      if File.file?("./hosts") 
-        i.vm.provision "file", source: "./shared/hosts", destination: "/tmp/hosts"
-        i.vm.provision "shell", inline: "cat /tmp/hosts >> /etc/hosts", privileged: true
+      if File.file?("./shared/cluster-conf/hosts") 
+        i.vm.provision "shell", inline: "cat /vagrant/cluster-conf/hosts >> /etc/hosts", privileged: true
       end
       # Install and Configure VM with predefined scripts
       i.vm.provision "shell", inline: "bash /vagrant/common-utils/ubuntu/docker-install-ubuntu.sh", privileged: true
@@ -137,6 +136,7 @@ Vagrant.configure("2") do |config|
     config.vm.define instance[:name] do |i|
       # VM Instance Specific Configuration
       i.vm.box = "ubuntu/focal64"
+      i.vm.box_check_update = true
       i.vm.hostname = instance[:name]
       i.vm.network "private_network", ip: "#{instance[:ip]}"
       i.disksize.size = vm_disksize
@@ -149,9 +149,8 @@ Vagrant.configure("2") do |config|
       # Shared folder between all instances:
       i.vm.synced_folder "./shared", "/vagrant"
       # Write hostnames and IP addresses of all nodes to the hosts file:
-      if File.file?("./shared/hosts") 
-        i.vm.provision "file", source: "./shared/hosts", destination: "/tmp/hosts"
-        i.vm.provision "shell", inline: "cat /tmp/hosts >> /etc/hosts", privileged: true
+      if File.file?("./shared/cluster-conf/hosts") 
+        i.vm.provision "shell", inline: "cat /vagrant/cluster-conf/hosts >> /etc/hosts", privileged: true
       end
       # Install and Configure VM with predefined scripts
       i.vm.provision "shell", inline: "bash /vagrant/common-utils/ubuntu/docker-install-ubuntu.sh", privileged: true
