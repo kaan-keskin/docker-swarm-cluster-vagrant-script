@@ -116,11 +116,11 @@ Vagrant.configure("2") do |config|
         i.vm.provision "shell", inline: "cat /vagrant/cluster-conf/hosts >> /etc/hosts", privileged: true
       end
       # Install and Configure VM with predefined scripts
+      i.vm.provision "shell", inline: "bash /vagrant/common-utils/ubuntu/system-init-ubuntu.sh", privileged: true
       i.vm.provision "shell", inline: "bash /vagrant/common-utils/sshd-conf.sh", privileged: true
       i.vm.provision "shell", inline: "bash /vagrant/common-utils/ubuntu/swap-off-ubuntu.sh", privileged: true
       i.vm.provision "shell", inline: "bash /vagrant/common-utils/ubuntu/kvm-init-ubuntu.sh", privileged: true
       i.vm.provision "shell", inline: "bash /vagrant/common-utils/ubuntu/cgroup-init.ubuntu.sh", privileged: true
-      i.vm.provision "shell", inline: "bash /vagrant/common-utils/ubuntu/system-init-ubuntu.sh", privileged: true
       i.vm.provision "shell", inline: "bash /vagrant/common-utils/ubuntu/timezone-settings-ubuntu.sh", privileged: true
       i.vm.provision "shell", inline: "bash /vagrant/common-utils/ubuntu/docker-install-ubuntu.sh", privileged: true
       # Decide Automatically Cluster Forming in Docker Swarm Mode
@@ -159,11 +159,11 @@ Vagrant.configure("2") do |config|
         i.vm.provision "shell", inline: "cat /vagrant/cluster-conf/hosts >> /etc/hosts", privileged: true
       end
       # Install and Configure VM with predefined scripts
+      i.vm.provision "shell", inline: "bash /vagrant/common-utils/ubuntu/system-init-ubuntu.sh", privileged: true
       i.vm.provision "shell", inline: "bash /vagrant/common-utils/sshd-conf.sh", privileged: true
       i.vm.provision "shell", inline: "bash /vagrant/common-utils/ubuntu/swap-off-ubuntu.sh", privileged: true
       i.vm.provision "shell", inline: "bash /vagrant/common-utils/ubuntu/kvm-init-ubuntu.sh", privileged: true
       i.vm.provision "shell", inline: "bash /vagrant/common-utils/ubuntu/cgroup-init.ubuntu.sh", privileged: true
-      i.vm.provision "shell", inline: "bash /vagrant/common-utils/ubuntu/system-init-ubuntu.sh", privileged: true
       i.vm.provision "shell", inline: "bash /vagrant/common-utils/ubuntu/timezone-settings-ubuntu.sh", privileged: true
       i.vm.provision "shell", inline: "bash /vagrant/common-utils/ubuntu/docker-install-ubuntu.sh", privileged: true
       # Decide Automatically Cluster Forming in Docker Swarm Mode

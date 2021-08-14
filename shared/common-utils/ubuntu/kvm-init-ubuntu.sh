@@ -27,17 +27,12 @@ adduser `id -un` kvm
 # The qemu-guest-agent is a helper daemon, which is installed in the guest. 
 # It is used to exchange information between the host and guest, and to execute command in the guest. 
 apt-get install -y qemu-guest-agent
-systemctl enable --now qemu-guest-agent
+# systemctl enable --now qemu-guest-agent
 
 # KVM Virtualization Status Check
-virt-host-validate
+# virt-host-validate
 
 # List All KVM Network Interfaces
-virsh net-list --all
-
-# Clean apt cache
-apt autoclean -y
-apt autoremove -y
-apt clean -y
+# virsh net-list --all
 
 # -----------------

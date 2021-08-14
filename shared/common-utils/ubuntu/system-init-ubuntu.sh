@@ -20,10 +20,10 @@ apt-get install -y --no-install-recommends \
   python3-pip \
   apt-transport-https \
   curl \
-  bash-completion
+  bash-completion \
+  tmux
 
 # Install BpyTop on Ubuntu 
-apt install -y python3-pip
 pip3 install bpytop
 
 # Clean apt cache
