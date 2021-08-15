@@ -95,6 +95,8 @@ Vagrant.configure("2") do |config|
   end
   
   # Controller Node Provisioning
+  # First Controller Node will be Leader in Swarm Cluster.
+  # Swarm Cluster Leader: docker-swarm-controller-node-1
   controller_instances.each do |instance|
     config.vm.define instance[:name] do |i|
       # VM Instance Specific Configuration
