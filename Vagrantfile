@@ -105,6 +105,9 @@ Vagrant.configure("2") do |config|
       i.vm.hostname = instance[:name]
       i.vm.network "private_network", ip: "#{instance[:ip]}"
       i.disksize.size = vm_disksize
+      i.vm.provider vm_provider do |vm|
+        vm.name = instance[:name]
+      end
       # Proxy Configuration
       if not http_proxy.to_s.strip.empty?
         i.proxy.http     = http_proxy
