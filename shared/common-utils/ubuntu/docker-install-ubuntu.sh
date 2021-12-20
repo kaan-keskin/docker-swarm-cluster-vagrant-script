@@ -6,7 +6,7 @@
 # Install Docker Engine on Ubuntu
 # Source: https://docs.docker.com/engine/install/ubuntu/
 #
-
+export DEBIAN_FRONTEND=noninteractive
 # Older versions of Docker were called docker, docker.io, or docker-engine. If these are installed, uninstall them:
 apt-get remove docker docker-engine docker.io containerd runc
 

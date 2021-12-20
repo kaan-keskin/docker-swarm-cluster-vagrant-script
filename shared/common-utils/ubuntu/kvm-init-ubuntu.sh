@@ -2,7 +2,7 @@
 # KVM virtualization initializaiton for all nodes in the cluster.
 
 # -----------------
-
+export DEBIAN_FRONTEND=noninteractive
 # Setting MYOS variable
 MYOS=$(hostnamectl | awk '/Operating/ { print $3 }')
 OSVERSION=$(hostnamectl | awk '/Operating/ { print $4 }')

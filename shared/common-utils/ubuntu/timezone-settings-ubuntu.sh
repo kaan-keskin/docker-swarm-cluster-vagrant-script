@@ -2,7 +2,7 @@
 # Time Zone Settings for all nodes in the cluster.
 
 # -----------------
-
+export DEBIAN_FRONTEND=noninteractive
 # Set Timezone:
 timedatectl set-timezone Europe/Istanbul
 

@@ -2,7 +2,7 @@
 # cgroups - Linux control groups Initialization
 
 # -----------------
-
+export DEBIAN_FRONTEND=noninteractive
 # Using libcgroup
 apt-get install -y lxc cgroup-lite cgroup-tools
 
