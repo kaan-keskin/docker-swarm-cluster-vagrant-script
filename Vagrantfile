@@ -52,6 +52,9 @@ worker_instances = []
   worker_instances.push({:name => "docker-swarm-worker-node-#{n}", :ip => "192.168.10.2#{n}"})
 end
 
+# Create folder and file for the next step below
+Dir.mkdir './shared/cluster-conf' unless Dir.exists? './shared/cluster-conf'
+
 # Write hostnames and IP addresses of all nodes to the hosts file:
 File.open("./shared/cluster-conf/hosts", 'w') { |file| 
   controller_instances.each do |i|
