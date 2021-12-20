@@ -29,8 +29,8 @@ apt-get install -y --no-install-recommends \
 pip3 install bpytop
 
 # Clean apt cache
-apt autoclean -y
-apt autoremove -y
-apt clean -y
+apt-get autoclean -y
+apt-get autoremove -y
+apt-get clean -y
 
 # -----------------
